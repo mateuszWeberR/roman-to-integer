@@ -12,6 +12,18 @@ Ancient Rome
 */
 
 public class Solution {
+    private static final Map<Character, Integer> romanMap = new HashMap<>();
+
+    static {
+        romanMap.put('I', 1);
+        romanMap.put('V', 5);
+        romanMap.put('X', 10);
+        romanMap.put('L', 50);
+        romanMap.put('C', 100);
+        romanMap.put('D', 500);
+        romanMap.put('M', 1000);
+    }
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Input a roman numeral to be converted to decimal: ");
@@ -21,14 +33,6 @@ public class Solution {
 
     public static int romanToInteger(String s) {
         int result = 0;
-        Map<Character, Integer> romanMap = new HashMap<>();
-        romanMap.put('I', 1);
-        romanMap.put('V', 5);
-        romanMap.put('X', 10);
-        romanMap.put('L', 50);
-        romanMap.put('C', 100);
-        romanMap.put('D', 500);
-        romanMap.put('M', 1000);
 
         if (s == null || s.length() < 1)
             return 0;
